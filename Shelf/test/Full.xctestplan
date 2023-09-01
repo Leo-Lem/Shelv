@@ -1,0 +1,23 @@
+{
+  "configurations": [
+    {
+      "id": "5D4231B2-D99D-453F-B71E-302341297119",
+      "name": "Config",
+      "options": {}
+    }
+  ],
+  "defaultOptions": {
+    "codeCoverage": {
+      "targets": [
+        { "containerPath" : "container:Shelf/Shelf.xcodeproj", "identifier" : "Shelf", "name" : "Shelf" }
+        ,{ "containerPath" : "container:Current", "identifier" : "Current", "name" : "Current" }
+      ]
+    }
+  },
+  "testTargets": [
+    { "parallelizable": true, "target": { "containerPath": "container:Shelf/Shelf.xcodeproj", "identifier": "ShelfTests", "name": "ShelfTests" } },
+{ "parallelizable": false, "target": { "containerPath": "container:Shelf/Shelf.xcodeproj", "identifier": "ShelfUITests", "name": "ShelfUITests" } }
+    ,{ "parallelizable": true, "target": { "containerPath": "container:Current", "identifier": "CurrentTests", "name": "CurrentTests" } }
+  ],
+  "version": 1
+}
