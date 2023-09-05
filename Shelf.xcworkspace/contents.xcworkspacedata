@@ -11,9 +11,9 @@
       location = "group:.gitignore">
    </FileRef>
    <FileRef
-      location = "group:Shelf/Shelf.xcodeproj">
+      location = "group:app/app.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:Current">
+      location = "group:current">
    </FileRef>
 </Workspace>
