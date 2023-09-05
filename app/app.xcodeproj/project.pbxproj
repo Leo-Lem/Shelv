@@ -11,6 +11,8 @@
 		3E94D1F0E4234EC69C3BB7C87D19FCF9 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 91F61625B9E14C1793D6ED3AB550314B /* ComposableArchitecture */; };
 		4EF6EFABDBD04F7A9FB12E8D0BB56357 /* Current in Frameworks */ = {isa = PBXBuildFile; productRef = 1122CF069C054BA1BBBB6324EF7D5A54 /* Current */; };
 		6E846E2C2AA63D7A0097BC9A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 6E846E2B2AA63D7A0097BC9A /* Localizable.xcstrings */; };
+		6E846E2F2AA760620097BC9A /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E846E2E2AA760620097BC9A /* Book.swift */; };
+		6E846E312AA761B00097BC9A /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E846E302AA761B00097BC9A /* Author.swift */; };
 		6EE3949A2A2056FB00CAAEAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EE394962A2056FB00CAAEAC /* Assets.xcassets */; };
 		6EE394AD2A205A8200CAAEAC /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6EE394AC2A205A8200CAAEAC /* Colors.xcassets */; };
 		6EE394E52A205F1500CAAEAC /* Shelf-uitests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE394A32A2058EE00CAAEAC /* Shelf-uitests.swift */; };
@@ -46,6 +48,8 @@
 		6E33F9942A26DD99002519C0 /* ShelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShelfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E33F9A12A26DDA0002519C0 /* ShelfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShelfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E846E2B2AA63D7A0097BC9A /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		6E846E2E2AA760620097BC9A /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		6E846E302AA761B00097BC9A /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		6EE394962A2056FB00CAAEAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6EE3949C2A20577800CAAEAC /* Unit.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Unit.xctestplan; sourceTree = "<group>"; };
 		6EE3949D2A20578100CAAEAC /* Full.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Full.xctestplan; sourceTree = "<group>"; };
@@ -111,12 +115,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		6E846E2D2AA7604D0097BC9A /* model */ = {
+			isa = PBXGroup;
+			children = (
+				6E846E2E2AA760620097BC9A /* Book.swift */,
+				6E846E302AA761B00097BC9A /* Author.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		6EE3948F2A2056FB00CAAEAC /* src */ = {
 			isa = PBXGroup;
 			children = (
 				38B5742391574AC687E434ABBF2DD445 /* App.swift */,
 				A1E8F1CE200742898B0A85E462C13CC8 /* App-view.swift */,
 				8831FD4641EC4A6893D41F50643F291D /* App-reducer.swift */,
+				6E846E2D2AA7604D0097BC9A /* model */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -266,7 +280,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					6E33F97A2A26D886002519C0 = {
 						CreatedOnToolsVersion = 14.3;
@@ -281,7 +295,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6E33F9762A26D886002519C0 /* Build configuration list for PBXProject "Shelf" */;
+			buildConfigurationList = 6E33F9762A26D886002519C0 /* Build configuration list for PBXProject "app" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -357,8 +371,10 @@
 			files = (
 				6EE394F02A20634600CAAEAC /* Colors.swift in Sources */,
 				6EE394F22A20648800CAAEAC /* Name-preview.swift in Sources */,
+				6E846E2F2AA760620097BC9A /* Book.swift in Sources */,
 				6EE394E82A205FC700CAAEAC /* config.swift in Sources */,
 				0850992357F348F0AA6C7F800BA4BF06 /* App.swift in Sources */,
+				6E846E312AA761B00097BC9A /* Author.swift in Sources */,
 				A7B6762CF46E428BA1A66492427B9467 /* App-view.swift in Sources */,
 				A01CA566C49B493B8A09BB3EE2869146 /* App-reducer.swift in Sources */,
 			);
@@ -400,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -432,6 +449,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -446,6 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -459,6 +478,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -491,6 +511,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -499,6 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -518,13 +540,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = res/previews;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "config/Shelf-info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Shelf;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.Shelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -543,13 +567,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = res/previews;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "config/Shelf-info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Shelf;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.Shelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -628,6 +654,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -660,6 +687,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -674,6 +702,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -693,13 +722,15 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = res/previews;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "config/Shelf-info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Shelf;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.Shelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -744,7 +775,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6E33F9762A26D886002519C0 /* Build configuration list for PBXProject "Shelf" */ = {
+		6E33F9762A26D886002519C0 /* Build configuration list for PBXProject "app" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E33F9872A26D887002519C0 /* Debug */,
