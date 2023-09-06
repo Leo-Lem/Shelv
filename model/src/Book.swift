@@ -8,11 +8,15 @@ public class Book {
   public let title: String
   public let brief: String
   public let author: Author
+  public let totalPages: Int
 
-  public init(isbn: Int, title: String, brief: String, author: Author) {
+  public var currentPage: Int? = nil
+
+  public init(isbn: Int, title: String, brief: String, author: Author, totalPages: Int) {
     self.isbn = isbn
     self.title = title
     self.brief = brief
     self.author = author
+    self.totalPages = totalPages
   }
 }
