@@ -33,3 +33,19 @@ public extension Current {
     // TODO: add actions for Current
   }
 }
+
+// MARK: - (ENVIRONMENT)
+
+import protocol SwiftUI.EnvironmentKey
+import struct SwiftUI.EnvironmentValues
+
+extension Current: EnvironmentKey {
+  static public var defaultValue = StoreOf<Current>(initialState: .init()) {}
+}
+
+extension EnvironmentValues {
+  var currentStore: StoreOf<Current> {
+    get { self[Current.self] }
+    set { self[Current.self] = newValue }
+  }
+}

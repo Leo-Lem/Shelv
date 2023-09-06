@@ -4,19 +4,17 @@ import ComposableArchitecture
 import SwiftUI
 
 public struct CurrentView: View {
-  @EnvironmentObject var store: StoreOf<Current>
+  @Environment(\.currentStore) var store
 
   public var body: some View {
-    WithViewStore(store) { vs in
+    WithViewStore(store) { _ in
       // TODO: configure Current view
       Render()
     }
   }
 
-  public init() {}
+  public init() { }
 }
-
-extension Store: ObservableObject {} // pass store as environment object
 
 // MARK: - (RENDER)
 
@@ -30,10 +28,4 @@ extension CurrentView {
 
 // MARK: - (PREVIEWS)
 
-#if DEBUG
-  struct CurrentView_Previews: PreviewProvider {
-    static var previews: some View {
-      CurrentView.Render()
-    }
-  }
-#endif
+#Preview { CurrentView.Render() }

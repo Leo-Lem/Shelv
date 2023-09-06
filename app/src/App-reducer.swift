@@ -35,3 +35,20 @@ extension AppReducer {
     // TODO: add actions
   }
 }
+
+// MARK: - (ENVIRONMENT)
+// TODO: turn this into macro
+
+import protocol SwiftUI.EnvironmentKey
+import struct SwiftUI.EnvironmentValues
+
+extension AppReducer: EnvironmentKey {
+  static public var defaultValue = StoreOf<AppReducer>(initialState: .init()) {}
+}
+
+extension EnvironmentValues {
+  var store: StoreOf<AppReducer> {
+    get { self[AppReducer.self] }
+    set { self[AppReducer.self] = newValue }
+  }
+}
