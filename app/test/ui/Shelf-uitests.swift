@@ -23,8 +23,4 @@ final class ShelfUITests: XCTestCase {
       XCUIApplication().launch()
     }
   }
-
-  func test<#Feature#>_given<#Precondition#>_when<#Action#>_then<#Outcome#>() throws {
-    // TODO: Add UI tests for Shelf
-  }
 }

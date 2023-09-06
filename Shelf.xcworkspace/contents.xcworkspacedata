@@ -16,4 +16,7 @@
    <FileRef
       location = "group:current">
    </FileRef>
+   <FileRef
+      location = "group:model">
+   </FileRef>
 </Workspace>
