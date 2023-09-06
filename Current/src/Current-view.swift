@@ -30,4 +30,9 @@ extension CurrentView {
 
 // MARK: - (PREVIEWS)
 
-#Preview { CurrentView.Render() }
+#Preview {
+  Color.accentColor
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .ignoresSafeArea()
+    .overlay(alignment: .bottom, content: CurrentView.Render.init)
+}
