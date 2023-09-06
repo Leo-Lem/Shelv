@@ -3,7 +3,7 @@
 import ComposableArchitecture
 
 public struct Current: ReducerProtocol {
-  public func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
+  public func reduce(into _: inout State, action: Action) -> EffectTask<Action> {
     // TODO: add reducer for Current
 
     switch action {
@@ -40,10 +40,10 @@ import protocol SwiftUI.EnvironmentKey
 import struct SwiftUI.EnvironmentValues
 
 extension Current: EnvironmentKey {
-  static public var defaultValue = StoreOf<Current>(initialState: .init()) {}
+  public static var defaultValue = StoreOf<Current>(initialState: .init()) {}
 }
 
-extension EnvironmentValues {
+public extension EnvironmentValues {
   var currentStore: StoreOf<Current> {
     get { self[Current.self] }
     set { self[Current.self] = newValue }

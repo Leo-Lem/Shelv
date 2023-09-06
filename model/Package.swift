@@ -3,25 +3,18 @@
 import PackageDescription
 
 let package = Package(
-  name: "Current",
+  name: "Model",
   platforms: [.iOS(.v17)]
 )
 
 // MARK: - (DEPENDENCIES)
 
-package.dependencies = [
-  .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.53.2"),
-  .package(name: "Model", path: "./model")
-]
+package.dependencies = []
 
 // MARK: - (TARGETS)
 
 let src = Target.target(
   name: package.name,
-  dependencies: [
-    .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
-    .product(name: "Model", package: "Model")
-  ],
   path: "src"
 )
 

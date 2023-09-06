@@ -1,22 +1,54 @@
 {
-  "configurations": [
+  "configurations" : [
     {
-      "id": "5D4231B2-D99D-453F-B71E-302341297119",
-      "name": "Config",
-      "options": {}
+      "id" : "5D4231B2-D99D-453F-B71E-302341297119",
+      "name" : "Config",
+      "options" : {
+
+      }
     }
   ],
-  "defaultOptions": {
-    "codeCoverage": {
-      "targets": [
-        { "containerPath" : "container:Shelf/Shelf.xcodeproj", "identifier" : "Shelf", "name" : "Shelf" }
-        ,{ "containerPath" : "container:Current", "identifier" : "Current", "name" : "Current" }
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:current",
+          "identifier" : "Current",
+          "name" : "Current"
+        },
+        {
+          "containerPath" : "container:app\/app.xcodeproj",
+          "identifier" : "6E33F97A2A26D886002519C0",
+          "name" : "Shelf"
+        }
       ]
     }
   },
-  "testTargets": [
-    { "parallelizable": true, "target": { "containerPath": "container:Shelf/Shelf.xcodeproj", "identifier": "ShelfTests", "name": "ShelfTests" } }
-    ,{ "parallelizable": true, "target": { "containerPath": "container:Current", "identifier": "CurrentTests", "name": "CurrentTests" } }
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:app\/app.xcodeproj",
+        "identifier" : "6E33F9932A26DD99002519C0",
+        "name" : "ShelfTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:current",
+        "identifier" : "CurrentTests",
+        "name" : "CurrentTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:model",
+        "identifier" : "ModelTests",
+        "name" : "ModelTests"
+      }
+    }
   ],
-  "version": 1
+  "version" : 1
 }

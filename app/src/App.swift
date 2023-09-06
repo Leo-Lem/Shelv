@@ -3,13 +3,14 @@
 import class ComposableArchitecture.Store
 import SwiftData
 import SwiftUI
+import Model
 
 @main
 struct App: SwiftUI.App {
   var body: some Scene {
     WindowGroup {
       AppView()
-        .environmentObject(store)
+        .environment(\.store, store)
     }
     .modelContainer(for: [Book.self, Author.self])
   }

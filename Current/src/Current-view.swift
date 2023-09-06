@@ -13,7 +13,9 @@ public struct CurrentView: View {
     }
   }
 
-  public init() { }
+  public init() {
+    
+  }
 }
 
 // MARK: - (RENDER)
@@ -21,7 +23,7 @@ public struct CurrentView: View {
 extension CurrentView {
   struct Render: View {
     var body: some View {
-      Text("Current") // TODO: implement Current render view
+      Text("CURRENT") // TODO: implement Current render view
     }
   }
 }
