@@ -5,12 +5,12 @@ import SwiftUI
 import struct Current.CurrentView
 
 struct AppView: View {
-  @EnvironmentObject private var store: StoreOf<AppReducer>
+  @Environment(\.store) private var store
 
   var body: some View {
-    WithViewStore(store) { vs in
+    WithViewStore(store, observe: \.current) { vs in
       Render()
-        .environmentObject(store.scope(state: \.current, action: { .current($0) }))
+        .environment(\.currentStore, store.scope(state: \.current, action: { .current($0) }))
     }
   }
 }
@@ -20,7 +20,10 @@ struct AppView: View {
 extension AppView {
   struct Render: View {
     var body: some View {
-      CurrentView()
+      NavigationStack {
+        Text("LIBRARY")
+      }
+      .overlay(alignment: .bottom, content: CurrentView.init)
     }
   }
 }
