@@ -10,7 +10,7 @@ let package = Package(
 // MARK: - (DEPENDENCIES)
 
 package.dependencies = [
-  .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.53.2"),
+  .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "1.0.0"),
   .package(name: "Model", path: "./model")
 ]
 

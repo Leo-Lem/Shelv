@@ -9,18 +9,25 @@ let package = Package(
 
 // MARK: - (DEPENDENCIES)
 
-package.dependencies = []
+package.dependencies = [
+  .package(url: "https://github.com/pointfreeco/swift-dependencies", from: "1.0.0")
+]
 
 // MARK: - (TARGETS)
 
 let src = Target.target(
   name: package.name,
+  dependencies: [
+    .product(name: "Dependencies", package: "swift-dependencies")
+  ],
   path: "src"
 )
 
 let test = Target.testTarget(
   name: "\(src.name)Tests",
-  dependencies: [.target(name: src.name)],
+  dependencies: [
+    .target(name: src.name)
+  ],
   path: "test"
 )
 

@@ -1,22 +1,27 @@
 // Created by Leopold Lemmermann on 05.09.23.
 
+import struct Foundation.Data
 import SwiftData
 
 @Model
 public class Book {
   @Attribute(.unique) public let isbn: Int
-  public let title: String
-  public let brief: String
-  public let author: Author
-  public let totalPages: Int
 
-  public var currentPage: Int? = nil
+  public var title: String? = nil
+  public var brief: String? = nil
+  public var totalPages: Int? = nil
 
-  public init(isbn: Int, title: String, brief: String, author: Author, totalPages: Int) {
+  public var cover: Data?
+
+  public var currentPage: Int?
+
+  public init(
+    isbn: Int, title: String? = nil, brief: String? = nil, totalPages: Int? = nil,
+    in _: ModelContext? = nil
+  ) {
     self.isbn = isbn
     self.title = title
     self.brief = brief
-    self.author = author
     self.totalPages = totalPages
   }
 }

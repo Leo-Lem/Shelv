@@ -5,14 +5,14 @@ import class Model.Book
 
 // TODO: add a macro for creating reducers. lots of boilerplate here.
 
-public struct Current: ReducerProtocol {
-  public func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
+public struct Current: Reducer {
+  public func reduce(into state: inout State, action: Action) -> Effect<Action> {
     switch action {
     case let .read(book):
-      state.currentlyReading = book
+      state.current = book
 
     case let .turnTo(page):
-      state.currentlyReading?.currentPage = page
+      state.current?.currentPage = page
     }
 
     return .none
@@ -25,10 +25,10 @@ public struct Current: ReducerProtocol {
 
 public extension Current {
   struct State: Equatable {
-    public var currentlyReading: Book?
+    public var current: Book?
 
-    public init(currentlyReading: Book? = nil) {
-      self.currentlyReading = currentlyReading
+    public init(current: Book? = nil) {
+      self.current = current
     }
   }
 }
