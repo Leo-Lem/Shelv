@@ -53,7 +53,16 @@ extension CurrentView {
       .padding(.trailing)
       .frame(maxWidth: .infinity)
       .background(.bar)
+      .animation(.default, value: detailing)
+      .sheet(isPresented: $detailing) {
+        if let book { DetailView(book, turnTo: turnTo) }
+      }
+      .onTapGesture {
+        if book != nil { detailing = true }
+      }
     }
+
+    @State private var detailing = false
 
     init(book: Book?, turnTo: @escaping (Int) -> Void) {
       self.book = book
@@ -78,12 +87,12 @@ extension CurrentView {
       }
   }
 
-#Preview("None") {
-  Color.clear
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .ignoresSafeArea()
-    .overlay(alignment: .bottom) {
-      CurrentView.Render(book: nil) { print("turned to \($0)") }
-    }
-}
+  #Preview("None") {
+    Color.clear
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .ignoresSafeArea()
+      .overlay(alignment: .bottom) {
+        CurrentView.Render(book: nil) { print("turned to \($0)") }
+      }
+  }
 #endif
