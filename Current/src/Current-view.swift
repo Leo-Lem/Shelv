@@ -82,7 +82,7 @@ extension CurrentView {
       .ignoresSafeArea()
       .overlay(alignment: .bottom) {
         CurrentView.Render(
-          book: Book(isbn: 123, totalPages: 100, in: context)
+          book: Book(isbn: "123", totalPages: 100, in: context)
         ) { print("turned to \($0)") }
       }
   }

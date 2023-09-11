@@ -5,26 +5,55 @@ import SwiftData
 
 @Model
 public class Book {
-  @Attribute(.unique) public let isbn: Int
+  @Attribute(.unique) public let isbn: String
 
-  public var title: String? = nil
-  public var brief: String? = nil
-  public var totalPages: Int? = nil
-
+  public var title: String?
+  public var brief: String?
+  public var totalPages: Int?
   public var cover: Data?
+  @Relationship public var author: Author?
 
   public var currentPage: Int?
 
-  public var author: Author?
-
   public init(
-    isbn: Int, title: String? = nil, brief: String? = nil, totalPages: Int? = nil, author: Author? = nil,
-    in _: ModelContext? = nil
+    isbn: String,
+    title: String? = nil,
+    brief: String? = nil,
+    totalPages: Int? = nil,
+    author: Author? = nil
   ) {
     self.isbn = isbn
     self.title = title
     self.brief = brief
     self.totalPages = totalPages
     self.author = author
+  }
+
+  // TODO: build macro for this
+  #if DEBUG
+    public convenience init(
+      isbn: String,
+      title: String? = nil,
+      brief: String? = nil,
+      totalPages: Int? = nil,
+      author: Author? = nil,
+      in _: ModelContext
+    ) {
+      self.init(isbn: isbn, title: title, brief: brief, totalPages: totalPages, author: author)
+    }
+  #endif
+}
+
+public extension Book {
+  func turn(to page: Int) {
+    assert(page > 1 && page < totalPages ?? .max, "page out of bounds")
+
+    if page < 1 {
+      currentPage = 1
+    } else if let totalPages, page > totalPages {
+      currentPage = totalPages
+    } else {
+      currentPage = page
+    }
   }
 }

@@ -45,7 +45,7 @@ struct DetailView: View {
     return Color.clear
       .sheet(isPresented: .constant(true)) {
         DetailView(
-          Book(isbn: 123, in: context)
+          Book(isbn: "123", in: context)
         ) { print("turned to \($0)") }
       }
   }
@@ -54,7 +54,7 @@ struct DetailView: View {
     @Dependency(\.container.mainContext) var context
 
     return DetailView(
-      Book(isbn: 123, in: context)
+      Book(isbn: "123", in: context)
     ) { print("turned to \($0)") }
   }
 #endif

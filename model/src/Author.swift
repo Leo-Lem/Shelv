@@ -6,18 +6,30 @@ import SwiftData
 @Model
 public class Author {
   @Attribute(.unique) public let id: UUID
-  public let name: String
-  public let brief: String? = nil
 
+  public var name: String
+  public var brief: String? = nil
   @Relationship(.cascade) public var books: [Book] = []
 
   public init(
-    name: String, brief: String? = nil, books: [Book],
-    in _: ModelContext? = nil
+    name: String,
+    brief: String? = nil,
+    books: [Book]
   ) {
     id = UUID()
     self.name = name
     self.brief = brief
     self.books = books
   }
+
+  #if DEBUG
+    public convenience init(
+      name: String,
+      brief: String? = nil,
+      books: [Book],
+      in _: ModelContext
+    ) {
+      self.init(name: name, brief: brief, books: books)
+    }
+  #endif
 }

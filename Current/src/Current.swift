@@ -12,7 +12,7 @@ public struct Current: Reducer {
       state.current = book
 
     case let .turnTo(page):
-      state.current?.currentPage = page
+      state.current?.turn(to: page)
     }
 
     return .none
