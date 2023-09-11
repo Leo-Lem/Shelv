@@ -2,14 +2,20 @@
 
 import class Model.Book
 
-extension Optional<Book> {
-  var title: String {
+extension Book {
+  var titleString: String {
+    if let title = self.title {
+      return title
+    } else {
+      return String(localized: "NEW_BOOK", bundle: .module)
+    }
+  }
+}
+
+extension Book? {
+  var titleString: String {
     if let self {
-      if let title = self.title {
-        return title
-      } else {
-        return String(localized: "NEW_BOOK", bundle: .module)
-      }
+      return self.titleString
     } else {
       return String(localized: "NO_BOOK", bundle: .module)
     }

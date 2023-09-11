@@ -26,16 +26,16 @@ extension CurrentView {
 
     var body: some View {
       HStack {
-        CoverView(book?.cover)
+        CoverView(book.coverImage)
           .frame(maxHeight: 60)
           .padding(5)
 
         VStack {
           HStack {
-            Text(book.title)
+            Text(book.titleString)
               .font(.headline)
 
-            if let author = book.author {
+            if let author = book?.authorString {
               Text("BY \(author)", bundle: .module)
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
@@ -52,7 +52,7 @@ extension CurrentView {
       }
       .padding(.trailing)
       .frame(maxWidth: .infinity)
-      .background(.regularMaterial)
+      .background(.bar)
     }
 
     init(book: Book?, turnTo: @escaping (Int) -> Void) {

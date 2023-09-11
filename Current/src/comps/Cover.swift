@@ -1,40 +1,50 @@
 // Created by Leopold Lemmermann on 11.09.23.
 
+import Dependencies
+import Model
 import SwiftUI
 
 struct CoverView: View {
-  let image: Image?
+  let image: Image
 
   var body: some View {
-    (image ?? Image("no-cover", bundle: .module))
-      .resizable()
-      .scaledToFit()
-      .background(.regularMaterial)
-      .clipShape(.rect(cornerRadius: 10))
+    VStack {
+      Spacer()
+
+      image
+        .resizable()
+        .scaledToFit()
+
+      Spacer()
+    }
+    .aspectRatio(3 / 4, contentMode: .fit)
+    .background(.ultraThinMaterial)
+    .clipShape(.rect(cornerRadius: 10))
   }
 
-  init(image: Image?) {
+  init(_ image: Image) {
     self.image = image
-  }
-
-  init(_ data: Data?) {
-    image = data
-      .flatMap(UIImage.init)
-      .flatMap(Image.init)
   }
 }
 
 // MARK: - (PREVIEWS)
 
 #if DEBUG
-  #Preview("Small") {
-    CoverView(nil)
-      .frame(height: 60)
+  #Preview("No book") {
+    CoverView(Book?.none.coverImage)
       .padding()
   }
 
-  #Preview("Large") {
-    CoverView(nil)
+  #Preview("No book (small)") {
+    CoverView(Book?.none.coverImage)
+      .frame(maxHeight: 60)
+      .padding()
+  }
+
+  #Preview("No cover") {
+    @Dependency(\.container.mainContext) var context
+
+    return CoverView(Book(isbn: 123, in: context).coverImage)
       .padding()
   }
 #endif
