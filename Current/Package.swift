@@ -22,7 +22,10 @@ let src = Target.target(
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
     .product(name: "Model", package: "Model")
   ],
-  path: "src"
+  path: "src",
+  resources: [
+    .process("Assets.xcassets")
+  ]
 )
 
 let test = Target.testTarget(

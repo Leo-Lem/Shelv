@@ -9,7 +9,7 @@ public class Author {
   public let name: String
   public let brief: String
 
-  public var books: [Book] = [] // TODO: possibly cascade
+  @Relationship(.cascade) public var books: [Book] = []
 
   public init(name: String, brief: String, books: [Book]) {
     id = UUID()

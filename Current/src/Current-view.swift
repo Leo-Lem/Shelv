@@ -26,12 +26,14 @@ extension CurrentView {
 
     var body: some View {
       HStack {
-        (book?.coverImage ?? Image("Placeholder"))
+        (book?.coverImage ?? Image("no-cover", bundle: .module))
           .resizable()
-          .background(.ultraThickMaterial)
+          .padding(5)
+          .background(.regularMaterial)
           .clipShape(.rect(cornerRadius: 5))
           .aspectRatio(1, contentMode: .fit)
           .padding(5)
+          .frame(maxHeight: 60)
 
         VStack {
           HStack {
@@ -57,7 +59,7 @@ extension CurrentView {
         .disabled(book == nil)
       }
       .padding(.trailing)
-      .frame(maxWidth: .infinity, maxHeight: 60) // TODO: adjust this to different displays
+      .frame(maxWidth: .infinity) // TODO: adjust this to different displays
       .labelStyle(.iconOnly)
       .background(.regularMaterial)
     }
@@ -87,7 +89,7 @@ public extension Book {
 #Preview {
   @Dependency(\.container.mainContext) var context
 
-  return Color.accentColor
+  return Color.primary
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .ignoresSafeArea()
     .overlay(alignment: .bottom) {
