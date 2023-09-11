@@ -46,14 +46,16 @@ public class Book {
 
 public extension Book {
   func turn(to page: Int) {
-    assert(page > 1 && page < totalPages ?? .max, "page out of bounds")
-
     if page < 1 {
       currentPage = 1
     } else if let totalPages, page > totalPages {
       currentPage = totalPages
     } else {
       currentPage = page
+    }
+
+    if page > 1 && page < totalPages ?? .max {
+      print("page out of bounds")
     }
   }
 }

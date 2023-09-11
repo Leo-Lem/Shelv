@@ -8,6 +8,7 @@ import XCTest
 
 @MainActor
 final class CurrentTests: XCTestCase {
+  // TODO: macro?
   var context: ModelContext!
 
   override func setUp() async throws {

@@ -1,21 +1,34 @@
 import Dependencies
-import XCTest
 @testable import Model
+import SwiftData
+import XCTest
 
 @MainActor
 final class ModelTests: XCTestCase {
-  func testMockContainer_whenInsertingBook_thenIsInserted() throws {
-    @Dependency(\.container) var container
+  var context: ModelContext!
 
-    let book = Book(
-      isbn: 123,
-      title: "Hello, world!",
-      brief: "This book is about taking your first steps in the Swift programming language.",
-      totalPages: 99
-    )
+  override func setUp() async throws {
+    let container = try ModelContainer(for: Book.self, ModelConfiguration(inMemory: true))
+    context = container.mainContext
+  }
 
-    container.mainContext.insert(book)
+  override func tearDown() async throws {
+    context.container.destroy()
+  }
 
-    print(book.isbn)
+  func testTurningPage_whenTurningToInvalidPage_thenTurnsToValidPage() throws {
+    let total = 100
+    let book = Book(isbn: "123", totalPages: total)
+    context.insert(book)
+
+    for (invalid, valid) in [
+      (-1, 1),
+      (0, 1),
+      (total + 1, total),
+      (.max, total), (.min, 1)
+    ] {
+      book.turn(to: invalid)
+      XCTAssertEqual(book.currentPage, valid)
+    }
   }
 }
