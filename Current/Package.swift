@@ -4,6 +4,7 @@ import PackageDescription
 
 let package = Package(
   name: "Current",
+  defaultLocalization: "en",
   platforms: [.iOS(.v17)]
 )
 
@@ -24,7 +25,8 @@ let src = Target.target(
   ],
   path: "src",
   resources: [
-    .process("Assets.xcassets")
+    .process("assets/Assets.xcassets"),
+    .process("assets/Localizable.xcstrings")
   ]
 )
 
