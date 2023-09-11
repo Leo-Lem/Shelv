@@ -26,75 +26,65 @@ extension CurrentView {
 
     var body: some View {
       HStack {
-        (book?.coverImage ?? Image("no-cover", bundle: .module))
-          .resizable()
-          .padding(5)
-          .background(.regularMaterial)
-          .clipShape(.rect(cornerRadius: 5))
-          .aspectRatio(1, contentMode: .fit)
-          .padding(5)
+        CoverView(book?.cover)
           .frame(maxHeight: 60)
+          .padding(5)
 
         VStack {
           HStack {
-            Text(book?.defaultedTitle ?? "NO_BOOK")
+            Text(title)
               .font(.headline)
 
-            Text("Author")
+            Text("Author") // TODO: implement authors
               .font(.subheadline)
               .foregroundStyle(.gray)
           }
 
-          Slider(value: $selectedPage, in: 1 ... Double(book?.totalPages ?? 2), step: 1)
-            .onChange(of: selectedPage) { _, newValue in turnTo(Int(newValue)) }
-            .padding(.top, -20)
-            .disabled(book == nil)
+          ProgressControl(
+            page: Binding { book?.currentPage ?? 1 } set: { turnTo($0) },
+            total: book?.totalPages ?? 2
+          )
+          .padding(.top, -10)
+          .disabled(book == nil)
         }
-        .frame(maxWidth: .infinity)
-
-        Button { selectedPage += 1 } label: {
-          Label("NEXT_PAGE", systemImage: "chevron.forward")
-        }
-        .buttonStyle(.borderedProminent)
-        .disabled(book == nil)
       }
       .padding(.trailing)
-      .frame(maxWidth: .infinity) // TODO: adjust this to different displays
-      .labelStyle(.iconOnly)
+      .frame(maxWidth: .infinity)
       .background(.regularMaterial)
     }
 
-    @State private var selectedPage: Double
+    private var title: String {
+      if let book {
+        if let title = book.title {
+          return title
+        } else {
+          return "NEW_BOOK"
+        }
+      } else {
+        return "NO_BOOK"
+      }
+    }
 
     init(book: Book?, turnTo: @escaping (Int) -> Void) {
       self.book = book
       self.turnTo = turnTo
-      selectedPage = Double(book?.currentPage ?? 1)
     }
-  }
-}
-
-public extension Book {
-  var defaultedTitle: String { title ?? "New Book" }
-
-  var coverImage: Image? {
-    cover
-      .flatMap(UIImage.init)
-      .flatMap(Image.init)
   }
 }
 
 // MARK: - (PREVIEWS)
 
-#Preview {
-  @Dependency(\.container.mainContext) var context
+#if DEBUG
+  #Preview {
+    @Dependency(\.container.mainContext) var context
 
-  return Color.primary
-    .frame(maxWidth: .infinity, maxHeight: .infinity)
-    .ignoresSafeArea()
-    .overlay(alignment: .bottom) {
-      CurrentView.Render(
-        book: Book(isbn: 123, title: "Hello, world!", totalPages: 100, in: context)
-      ) { print("turned to \($0)") }
-    }
-}
+    return Color.primary
+      .frame(maxWidth: .infinity, maxHeight: .infinity)
+      .ignoresSafeArea()
+      .overlay(alignment: .bottom) {
+        CurrentView.Render(
+          book: Book(isbn: 123, title: "Hello, world!", totalPages: 100, in: context)
+        ) { print("turned to \($0)") }
+      }
+  }
+#endif
