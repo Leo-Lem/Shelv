@@ -3,7 +3,7 @@
 import ComposableArchitecture
 import class Model.Book
 
-// TODO: add a macro for creating reducers. lots of boilerplate here.
+// TODO: add a macro for creating reducers.
 
 public struct Current: Reducer {
   public func reduce(into state: inout State, action: Action) -> Effect<Action> {

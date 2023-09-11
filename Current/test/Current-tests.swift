@@ -8,8 +8,7 @@ import XCTest
 
 @MainActor
 final class CurrentTests: XCTestCase {
-  // TODO: macro?
-  var context: ModelContext!
+  var context: ModelContext! // TODO: macro?
 
   override func setUp() async throws {
     let container = try ModelContainer(for: Book.self, ModelConfiguration(inMemory: true))

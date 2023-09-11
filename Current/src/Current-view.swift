@@ -75,14 +75,12 @@ extension CurrentView {
 
 #if DEBUG
   #Preview("Example") {
-    @Dependency(\.container.mainContext) var context
-
-    return Color.clear
+    Color.clear
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .ignoresSafeArea()
       .overlay(alignment: .bottom) {
         CurrentView.Render(
-          book: Book(isbn: "123", totalPages: 100, in: context)
+          book: Book(isbn: "123", totalPages: 100, in: .preview)
         ) { print("turned to \($0)") }
       }
   }

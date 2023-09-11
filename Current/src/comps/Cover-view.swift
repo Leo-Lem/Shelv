@@ -42,9 +42,7 @@ struct CoverView: View {
   }
 
   #Preview("No cover") {
-    @Dependency(\.container.mainContext) var context
-
-    return CoverView(Book(isbn: "123", in: context).coverImage)
+    CoverView(Book(isbn: "123", in: .preview).coverImage)
       .padding()
   }
 #endif

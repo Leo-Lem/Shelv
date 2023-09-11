@@ -40,21 +40,17 @@ struct DetailView: View {
 
 #if DEBUG
   #Preview("Sheet") {
-    @Dependency(\.container.mainContext) var context
-
-    return Color.clear
+    Color.clear
       .sheet(isPresented: .constant(true)) {
         DetailView(
-          Book(isbn: "123", in: context)
+          Book(isbn: "123", in: .preview)
         ) { print("turned to \($0)") }
       }
   }
 
   #Preview("Raw") {
-    @Dependency(\.container.mainContext) var context
-
-    return DetailView(
-      Book(isbn: "123", in: context)
+    DetailView(
+      Book(isbn: "123", in: .preview)
     ) { print("turned to \($0)") }
   }
 #endif
