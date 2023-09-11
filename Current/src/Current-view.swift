@@ -32,12 +32,14 @@ extension CurrentView {
 
         VStack {
           HStack {
-            Text(title)
+            Text(book.title)
               .font(.headline)
 
-            Text("Author") // TODO: implement authors
-              .font(.subheadline)
-              .foregroundStyle(.gray)
+            if let author = book.author {
+              Text("BY \(author)", bundle: .module)
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+            }
           }
 
           ProgressControl(
@@ -53,18 +55,6 @@ extension CurrentView {
       .background(.regularMaterial)
     }
 
-    private var title: String {
-      if let book {
-        if let title = book.title {
-          return title
-        } else {
-          return "NEW_BOOK"
-        }
-      } else {
-        return "NO_BOOK"
-      }
-    }
-
     init(book: Book?, turnTo: @escaping (Int) -> Void) {
       self.book = book
       self.turnTo = turnTo
@@ -75,16 +65,25 @@ extension CurrentView {
 // MARK: - (PREVIEWS)
 
 #if DEBUG
-  #Preview {
+  #Preview("Example") {
     @Dependency(\.container.mainContext) var context
 
-    return Color.primary
+    return Color.clear
       .frame(maxWidth: .infinity, maxHeight: .infinity)
       .ignoresSafeArea()
       .overlay(alignment: .bottom) {
         CurrentView.Render(
-          book: Book(isbn: 123, title: "Hello, world!", totalPages: 100, in: context)
+          book: Book(isbn: 123, totalPages: 100, in: context)
         ) { print("turned to \($0)") }
       }
   }
+
+#Preview("None") {
+  Color.clear
+    .frame(maxWidth: .infinity, maxHeight: .infinity)
+    .ignoresSafeArea()
+    .overlay(alignment: .bottom) {
+      CurrentView.Render(book: nil) { print("turned to \($0)") }
+    }
+}
 #endif

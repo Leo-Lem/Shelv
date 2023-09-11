@@ -15,13 +15,16 @@ public class Book {
 
   public var currentPage: Int?
 
+  public var author: Author?
+
   public init(
-    isbn: Int, title: String? = nil, brief: String? = nil, totalPages: Int? = nil,
+    isbn: Int, title: String? = nil, brief: String? = nil, totalPages: Int? = nil, author: Author? = nil,
     in _: ModelContext? = nil
   ) {
     self.isbn = isbn
     self.title = title
     self.brief = brief
     self.totalPages = totalPages
+    self.author = author
   }
 }
