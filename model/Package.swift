@@ -15,12 +15,15 @@ package.dependencies = []
 
 let src = Target.target(
   name: package.name,
+  dependencies: [],
   path: "src"
 )
 
 let test = Target.testTarget(
   name: "\(src.name)Tests",
-  dependencies: [.target(name: src.name)],
+  dependencies: [
+    .target(name: src.name)
+  ],
   path: "test"
 )
 

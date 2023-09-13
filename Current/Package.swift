@@ -4,13 +4,14 @@ import PackageDescription
 
 let package = Package(
   name: "Current",
+  defaultLocalization: "en",
   platforms: [.iOS(.v17)]
 )
 
 // MARK: - (DEPENDENCIES)
 
 package.dependencies = [
-  .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.53.2"),
+  .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "1.0.0"),
   .package(name: "Model", path: "./model")
 ]
 
@@ -22,7 +23,11 @@ let src = Target.target(
     .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
     .product(name: "Model", package: "Model")
   ],
-  path: "src"
+  path: "src",
+  resources: [
+    .process("assets/Assets.xcassets"),
+    .process("assets/Localizable.xcstrings")
+  ]
 )
 
 let test = Target.testTarget(

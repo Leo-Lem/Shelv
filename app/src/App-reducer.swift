@@ -3,8 +3,8 @@
 import ComposableArchitecture
 import struct Current.Current
 
-struct AppReducer: ReducerProtocol {
-  var body: some ReducerProtocol<State, Action> {
+struct AppReducer: Reducer {
+  var body: some Reducer<State, Action> {
     Scope(state: \.current, action: /Action.current, child: Current.init)
 
     Reduce { state, action in

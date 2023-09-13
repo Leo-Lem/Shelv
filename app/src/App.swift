@@ -12,7 +12,6 @@ struct App: SwiftUI.App {
       AppView()
         .environment(\.store, store)
     }
-    .modelContainer(for: [Book.self, Author.self])
   }
 
   private let store = Store(initialState: .init(), reducer: AppReducer.init)

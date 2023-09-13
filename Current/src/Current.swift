@@ -1,13 +1,18 @@
 // Created by Leopold Lemmermann on 01.09.2023.
 
 import ComposableArchitecture
+import class Model.Book
 
-public struct Current: ReducerProtocol {
-  public func reduce(into _: inout State, action: Action) -> EffectTask<Action> {
-    // TODO: add reducer for Current
+// TODO: add a macro for creating reducers.
 
+public struct Current: Reducer {
+  public func reduce(into state: inout State, action: Action) -> Effect<Action> {
     switch action {
-    default: break
+    case let .read(book):
+      state.current = book
+
+    case let .turnTo(page):
+      state.current?.turn(to: page)
     }
 
     return .none
@@ -20,9 +25,11 @@ public struct Current: ReducerProtocol {
 
 public extension Current {
   struct State: Equatable {
-    // TODO: add state for Current
+    public var current: Book?
 
-    public init() {}
+    public init(current: Book? = nil) {
+      self.current = current
+    }
   }
 }
 
@@ -30,7 +37,8 @@ public extension Current {
 
 public extension Current {
   enum Action {
-    // TODO: add actions for Current
+    case read(_ book: Book?)
+    case turnTo(_ page: Int)
   }
 }
 
