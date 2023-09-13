@@ -1,4 +1,3 @@
-import Dependencies
 @testable import Model
 import SwiftData
 import XCTest
@@ -8,12 +7,15 @@ final class ModelTests: XCTestCase {
   var context: ModelContext!
 
   override func setUp() async throws {
-    let container = try ModelContainer(for: Book.self, ModelConfiguration(inMemory: true))
+    let container = try ModelContainer(
+      for: Book.self,
+      configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+    )
     context = container.mainContext
   }
 
   override func tearDown() async throws {
-    context.container.destroy()
+    context.container.deleteAllData()
   }
 
   func testTurningPage_whenTurningToInvalidPage_thenTurnsToValidPage() throws {

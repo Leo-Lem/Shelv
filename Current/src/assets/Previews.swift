@@ -7,8 +7,8 @@
   @MainActor
   extension ModelContext {
     static let preview = try! ModelContainer(
-      for: [Book.self],
-      ModelConfiguration(inMemory: true)
+      for: Book.self,
+      configurations: ModelConfiguration(isStoredInMemoryOnly: true)
     ).mainContext
   }
 #endif

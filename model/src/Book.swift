@@ -54,7 +54,7 @@ public extension Book {
       currentPage = page
     }
 
-    if page > 1 && page < totalPages ?? .max {
+    if page > 1, page < totalPages ?? .max {
       print("page out of bounds")
     }
   }

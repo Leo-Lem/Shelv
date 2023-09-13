@@ -9,7 +9,7 @@ public class Author {
 
   public var name: String
   public var brief: String? = nil
-  @Relationship(.cascade) public var books: [Book] = []
+  @Relationship(deleteRule: .cascade) public var books: [Book] = []
 
   public init(
     name: String,
