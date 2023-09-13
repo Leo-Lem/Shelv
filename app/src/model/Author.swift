@@ -4,14 +4,14 @@ import struct Foundation.UUID
 import SwiftData
 
 @Model
-public class Author {
-  @Attribute(.unique) public let id: UUID
+class Author {
+  @Attribute(.unique) let id: UUID
 
-  public var name: String
-  public var brief: String? = nil
-  @Relationship(deleteRule: .cascade) public var books: [Book] = []
+  var name: String
+  var brief: String?
+  @Relationship(deleteRule: .cascade) var books: [Book] = []
 
-  public init(
+  init(
     name: String,
     brief: String? = nil,
     books: [Book]
@@ -23,7 +23,7 @@ public class Author {
   }
 
   #if DEBUG
-    public convenience init(
+    convenience init(
       name: String,
       brief: String? = nil,
       books: [Book],

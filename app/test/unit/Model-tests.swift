@@ -1,4 +1,4 @@
-@testable import Model
+@testable import Shelf
 import SwiftData
 import XCTest
 

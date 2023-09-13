@@ -1,27 +1,29 @@
 // Created by Leopold Lemmermann on 05.09.23.
 
-import struct Foundation.Data
+import Foundation
 import SwiftData
 
 @Model
-public class Book {
-  @Attribute(.unique) public let isbn: String
+class Book {
+  @Attribute(.unique) let id: UUID
+  @Attribute(.unique) let isbn: String?
 
-  public var title: String?
-  public var brief: String?
-  public var totalPages: Int?
-  public var cover: Data?
-  @Relationship public var author: Author?
+  var title: String?
+  var brief: String?
+  var totalPages: Int?
+  var cover: Data?
+  @Relationship var author: Author?
 
-  public var currentPage: Int?
+  var currentPage: Int?
 
-  public init(
+  init(
     isbn: String,
     title: String? = nil,
     brief: String? = nil,
     totalPages: Int? = nil,
     author: Author? = nil
   ) {
+    self.id = UUID()
     self.isbn = isbn
     self.title = title
     self.brief = brief
@@ -29,9 +31,8 @@ public class Book {
     self.author = author
   }
 
-  // TODO: build macro for this
   #if DEBUG
-    public convenience init(
+    convenience init(
       isbn: String,
       title: String? = nil,
       brief: String? = nil,
@@ -44,7 +45,7 @@ public class Book {
   #endif
 }
 
-public extension Book {
+extension Book {
   func turn(to page: Int) {
     if page < 1 {
       currentPage = 1

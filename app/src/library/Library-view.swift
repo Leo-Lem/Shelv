@@ -7,9 +7,9 @@ public struct LibraryView: View {
   @Environment(\.libraryStore) var store
 
   public var body: some View {
-    WithViewStore(store) { vs in
+//    WithViewStore(store) { vs in
       Render() // TODO: configure
-    }
+//    }
   }
 }
 

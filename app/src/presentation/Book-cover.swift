@@ -11,7 +11,7 @@ extension Book {
     {
       return image
     } else {
-      return Image("no-cover", bundle: .module)
+      return Image("no-cover")
     }
   }
 }

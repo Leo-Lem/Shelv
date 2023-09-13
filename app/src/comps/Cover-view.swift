@@ -1,7 +1,6 @@
 // Created by Leopold Lemmermann on 11.09.23.
 
 import Dependencies
-import Model
 import SwiftUI
 
 struct CoverView: View {

@@ -5,8 +5,8 @@ import class Model.Book
 
 // TODO: add a macro for creating reducers.
 
-public struct Current: Reducer {
-  public func reduce(into state: inout State, action: Action) -> Effect<Action> {
+struct Current: Reducer {
+  func reduce(into state: inout State, action: Action) -> Effect<Action> {
     switch action {
     case let .read(book):
       state.current = book
@@ -17,17 +17,15 @@ public struct Current: Reducer {
 
     return .none
   }
-
-  public init() {}
 }
 
 // MARK: - (STATE)
 
-public extension Current {
+extension Current {
   struct State: Equatable {
-    public var current: Book?
+    var current: Book?
 
-    public init(current: Book? = nil) {
+    init(current: Book? = nil) {
       self.current = current
     }
   }
@@ -35,7 +33,7 @@ public extension Current {
 
 // MARK: - (ACTIONS)
 
-public extension Current {
+extension Current {
   enum Action {
     case read(_ book: Book?)
     case turnTo(_ page: Int)
@@ -48,10 +46,10 @@ import protocol SwiftUI.EnvironmentKey
 import struct SwiftUI.EnvironmentValues
 
 extension Current: EnvironmentKey {
-  public static var defaultValue = StoreOf<Current>(initialState: .init()) {}
+  static var defaultValue = StoreOf<Current>(initialState: .init()) {}
 }
 
-public extension EnvironmentValues {
+extension EnvironmentValues {
   var currentStore: StoreOf<Current> {
     get { self[Current.self] }
     set { self[Current.self] = newValue }

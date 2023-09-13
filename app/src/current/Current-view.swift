@@ -1,7 +1,6 @@
 // Created by Leopold Lemmermann on 01.09.2023.
 
 import ComposableArchitecture
-import Model
 import SwiftData
 import SwiftUI
 
@@ -36,7 +35,7 @@ extension CurrentView {
               .font(.headline)
 
             if let author = book?.authorString {
-              Text("BY \(author)", bundle: .module)
+              Text("BY \(author)")
                 .font(.subheadline)
                 .foregroundStyle(.secondary)
             }

@@ -1,31 +1,40 @@
 // Created by Leopold Lemmermann on 13.09.23.
 
 import ComposableArchitecture
+import struct Foundation.UUID
+import SwiftData
 
 public struct Library: Reducer {
   public func reduce(into state: inout State, action: Action) -> Effect<Action> {
     switch action {
-      // TODO: add reducers
+    case let .add(book):
+      
+    case let .edit(id, update):
+
     default: break
     }
 
     return .none
   }
+
+  @Dependency(\.container.mainContext) private var context
 }
 
 // MARK: - (STATE)
 
-extension Library {
-  public struct State: Equatable {
-    // TODO: add state
+public extension Library {
+  struct State: Equatable {
+    var books = [Book]()
   }
 }
 
 // MARK: - (ACTIONS)
 
-extension Library {
-  public enum Action {
-    // TODO: add actions
+public extension Library {
+  enum Action {
+    case add(Book)
+    case edit(_ id: UUID, update: (inout Book) -> Void)
+    case remove(Book)
   }
 }
 

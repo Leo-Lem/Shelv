@@ -7,7 +7,7 @@ extension Book {
     if let author = self.author {
       return author.name
     } else {
-      return String(localized: "UNKNOWN_AUTHOR", bundle: .module)
+      return String(localized: "UNKNOWN_AUTHOR")
     }
   }
 }

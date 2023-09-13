@@ -15,7 +15,7 @@ struct DetailView: View {
 
       Text(book.titleString)
 
-      Text("BY \(book.authorString)", bundle: .module)
+      Text("BY \(book.authorString)")
         .foregroundStyle(.secondary)
 
       ProgressControl(

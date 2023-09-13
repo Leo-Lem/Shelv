@@ -1,8 +1,7 @@
 // Created by Leopold Lemmermann on 01.09.2023.
 
 import ComposableArchitecture
-@testable import Current
-import class Model.Book
+@testable import Shelf
 import SwiftData
 import XCTest
 

@@ -32,22 +32,6 @@
         "identifier" : "6E33F9932A26DD99002519C0",
         "name" : "ShelfTests"
       }
-    },
-    {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:current",
-        "identifier" : "CurrentTests",
-        "name" : "CurrentTests"
-      }
-    },
-    {
-      "parallelizable" : true,
-      "target" : {
-        "containerPath" : "container:model",
-        "identifier" : "ModelTests",
-        "name" : "ModelTests"
-      }
     }
   ],
   "version" : 1

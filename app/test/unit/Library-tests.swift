@@ -1,13 +1,12 @@
 // Created by Leopold Lemmermann on 13.09.23.
 
-@testable import Library
+@testable import Shelf
 import XCTest
-import class Model.Book
 import SwiftData
 import XCTest
 
 @MainActor
-final class CurrentTests: XCTestCase {
+final class LibraryTests: XCTestCase {
   var context: ModelContext! // TODO: macro?
 
   override func setUp() async throws {

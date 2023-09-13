@@ -7,7 +7,7 @@ extension Book {
     if let title = self.title {
       return title
     } else {
-      return String(localized: "NEW_BOOK", bundle: .module)
+      return String(localized: "NEW_BOOK")
     }
   }
 }
@@ -17,7 +17,7 @@ extension Book? {
     if let self {
       return self.titleString
     } else {
-      return String(localized: "NO_BOOK", bundle: .module)
+      return String(localized: "NO_BOOK")
     }
   }
 }
