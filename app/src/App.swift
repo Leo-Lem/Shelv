@@ -3,7 +3,6 @@
 import class ComposableArchitecture.Store
 import SwiftData
 import SwiftUI
-import Model
 
 @main
 struct App: SwiftUI.App {

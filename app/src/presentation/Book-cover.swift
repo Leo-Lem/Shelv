@@ -1,6 +1,5 @@
 // Created by Leopold Lemmermann on 11.09.23.
 
-import class Model.Book
 import SwiftUI
 
 extension Book {

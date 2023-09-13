@@ -2,7 +2,6 @@
 
 import ComposableArchitecture
 import SwiftUI
-import struct Current.CurrentView
 
 struct AppView: View {
   @Environment(\.store) private var store

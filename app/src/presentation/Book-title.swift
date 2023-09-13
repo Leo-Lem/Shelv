@@ -1,7 +1,5 @@
 // Created by Leopold Lemmermann on 11.09.23.
 
-import class Model.Book
-
 extension Book {
   var titleString: String {
     if let title = self.title {

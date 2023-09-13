@@ -5,8 +5,6 @@ import SwiftData
 
 @Model
 class Author {
-  @Attribute(.unique) let id: UUID
-
   var name: String
   var brief: String?
   @Relationship(deleteRule: .cascade) var books: [Book] = []
@@ -16,7 +14,6 @@ class Author {
     brief: String? = nil,
     books: [Book]
   ) {
-    id = UUID()
     self.name = name
     self.brief = brief
     self.books = books

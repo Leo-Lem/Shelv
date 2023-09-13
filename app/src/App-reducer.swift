@@ -1,7 +1,6 @@
 // Created by Leopold Lemmermann on 01.09.2023.
 
 import ComposableArchitecture
-import struct Current.Current
 
 struct AppReducer: Reducer {
   var body: some Reducer<State, Action> {

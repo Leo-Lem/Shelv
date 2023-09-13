@@ -13,4 +13,7 @@
    <FileRef
       location = "group:app/app.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:../../packages/macros/DependencyKey">
+   </FileRef>
 </Workspace>

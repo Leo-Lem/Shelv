@@ -5,8 +5,7 @@ import SwiftData
 
 @Model
 class Book {
-  @Attribute(.unique) let id: UUID
-  @Attribute(.unique) let isbn: String?
+  @Attribute(.unique) let isbn: String
 
   var title: String?
   var brief: String?
@@ -23,7 +22,6 @@ class Book {
     totalPages: Int? = nil,
     author: Author? = nil
   ) {
-    self.id = UUID()
     self.isbn = isbn
     self.title = title
     self.brief = brief
@@ -55,8 +53,8 @@ extension Book {
       currentPage = page
     }
 
-    if page > 1, page < totalPages ?? .max {
-      print("page out of bounds")
-    }
+    #if !TEST
+    assert(page > 1 && page < totalPages ?? .max, "page out of bounds")
+    #endif
   }
 }

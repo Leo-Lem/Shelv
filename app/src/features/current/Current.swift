@@ -1,7 +1,6 @@
 // Created by Leopold Lemmermann on 01.09.2023.
 
 import ComposableArchitecture
-import class Model.Book
 
 // TODO: add a macro for creating reducers.
 
