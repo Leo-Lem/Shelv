@@ -3,7 +3,7 @@
 import XCTest
 
 @MainActor
-final class ShelfUITests: XCTestCase {
+final class ShelvUITests: XCTestCase {
   private var app: XCUIApplication!
 
   override func setUp() {

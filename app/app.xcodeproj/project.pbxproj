@@ -56,9 +56,9 @@
 
 /* Begin PBXFileReference section */
 		38B5742391574AC687E434ABBF2DD445 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		6E33F97B2A26D886002519C0 /* Shelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E33F9942A26DD99002519C0 /* ShelfTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShelfTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E33F9A12A26DDA0002519C0 /* ShelfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShelfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E33F97B2A26D886002519C0 /* Shelv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shelv.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E33F9942A26DD99002519C0 /* ShelvTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShelvTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E33F9A12A26DDA0002519C0 /* ShelvUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShelvUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E9415742AB1EE140026A9B3 /* Library-view.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Library-view.swift"; sourceTree = "<group>"; };
 		6E9415752AB1EE140026A9B3 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		6E94157A2AB1EE310026A9B3 /* Detail-view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail-view.swift"; sourceTree = "<group>"; };
@@ -83,10 +83,10 @@
 		6EE394A12A2058E900CAAEAC /* Shelf-tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shelf-tests.swift"; sourceTree = "<group>"; };
 		6EE394A32A2058EE00CAAEAC /* Shelf-uitests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Shelf-uitests.swift"; sourceTree = "<group>"; };
 		6EE394AC2A205A8200CAAEAC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		6EE394C62A205E6F00CAAEAC /* Shelf.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Shelf.entitlements; sourceTree = "<group>"; };
+		6EE394C62A205E6F00CAAEAC /* Shelv.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Shelv.entitlements; sourceTree = "<group>"; };
 		6EE394E72A205FC700CAAEAC /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		6EE394E92A20606B00CAAEAC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6EE394ED2A2061ED00CAAEAC /* Shelf-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Shelf-info.plist"; sourceTree = "<group>"; };
+		6EE394ED2A2061ED00CAAEAC /* Shelv-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Shelv-info.plist"; sourceTree = "<group>"; };
 		6EE394EF2A20634600CAAEAC /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		871163CD3A3C40E4A67E98963A73631D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		8831FD4641EC4A6893D41F50643F291D /* App-reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App-reducer.swift"; sourceTree = "<group>"; };
@@ -133,9 +133,9 @@
 		6E33F97C2A26D886002519C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E33F97B2A26D886002519C0 /* Shelf.app */,
-				6E33F9942A26DD99002519C0 /* ShelfTests.xctest */,
-				6E33F9A12A26DDA0002519C0 /* ShelfUITests.xctest */,
+				6E33F97B2A26D886002519C0 /* Shelv.app */,
+				6E33F9942A26DD99002519C0 /* ShelvTests.xctest */,
+				6E33F9A12A26DDA0002519C0 /* ShelvUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,8 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				6EE394E72A205FC700CAAEAC /* config.swift */,
-				6EE394C62A205E6F00CAAEAC /* Shelf.entitlements */,
-				6EE394ED2A2061ED00CAAEAC /* Shelf-info.plist */,
+				6EE394C62A205E6F00CAAEAC /* Shelv.entitlements */,
+				6EE394ED2A2061ED00CAAEAC /* Shelv-info.plist */,
 				871163CD3A3C40E4A67E98963A73631D /* .gitignore */,
 				8D97B8BA9388401A9D26920F1CA63DD6 /* .swiftlint.yml */,
 			);
@@ -293,9 +293,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6E33F97A2A26D886002519C0 /* Shelf */ = {
+		6E33F97A2A26D886002519C0 /* Shelv */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E33F9892A26D887002519C0 /* Build configuration list for PBXNativeTarget "Shelf" */;
+			buildConfigurationList = 6E33F9892A26D887002519C0 /* Build configuration list for PBXNativeTarget "Shelv" */;
 			buildPhases = (
 				EDC5EAA8834D4E5C8C37BBBA7E6D1F56 /* ShellScript */,
 				6E33F9772A26D886002519C0 /* Sources */,
@@ -306,17 +306,17 @@
 			);
 			dependencies = (
 			);
-			name = Shelf;
+			name = Shelv;
 			packageProductDependencies = (
 				6E9415972AB1EF7E0026A9B3 /* ComposableArchitecture */,
 			);
 			productName = Shelf;
-			productReference = 6E33F97B2A26D886002519C0 /* Shelf.app */;
+			productReference = 6E33F97B2A26D886002519C0 /* Shelv.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6E33F9932A26DD99002519C0 /* ShelfTests */ = {
+		6E33F9932A26DD99002519C0 /* ShelvTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E33F99A2A26DD99002519C0 /* Build configuration list for PBXNativeTarget "ShelfTests" */;
+			buildConfigurationList = 6E33F99A2A26DD99002519C0 /* Build configuration list for PBXNativeTarget "ShelvTests" */;
 			buildPhases = (
 				6E33F9902A26DD99002519C0 /* Sources */,
 				6E33F9912A26DD99002519C0 /* Frameworks */,
@@ -327,14 +327,14 @@
 			dependencies = (
 				6E33F9992A26DD99002519C0 /* PBXTargetDependency */,
 			);
-			name = ShelfTests;
+			name = ShelvTests;
 			productName = ShelfTests;
-			productReference = 6E33F9942A26DD99002519C0 /* ShelfTests.xctest */;
+			productReference = 6E33F9942A26DD99002519C0 /* ShelvTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6E33F9A02A26DDA0002519C0 /* ShelfUITests */ = {
+		6E33F9A02A26DDA0002519C0 /* ShelvUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6E33F9A92A26DDA0002519C0 /* Build configuration list for PBXNativeTarget "ShelfUITests" */;
+			buildConfigurationList = 6E33F9A92A26DDA0002519C0 /* Build configuration list for PBXNativeTarget "ShelvUITests" */;
 			buildPhases = (
 				6E33F99D2A26DDA0002519C0 /* Sources */,
 				6E33F99E2A26DDA0002519C0 /* Frameworks */,
@@ -345,9 +345,9 @@
 			dependencies = (
 				6E33F9A82A26DDA0002519C0 /* PBXTargetDependency */,
 			);
-			name = ShelfUITests;
+			name = ShelvUITests;
 			productName = ShelfUITests;
-			productReference = 6E33F9A12A26DDA0002519C0 /* ShelfUITests.xctest */;
+			productReference = 6E33F9A12A26DDA0002519C0 /* ShelvUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -389,9 +389,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6E33F97A2A26D886002519C0 /* Shelf */,
-				6E33F9932A26DD99002519C0 /* ShelfTests */,
-				6E33F9A02A26DDA0002519C0 /* ShelfUITests */,
+				6E33F97A2A26D886002519C0 /* Shelv */,
+				6E33F9932A26DD99002519C0 /* ShelvTests */,
+				6E33F9A02A26DDA0002519C0 /* ShelvUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -495,12 +495,12 @@
 /* Begin PBXTargetDependency section */
 		6E33F9992A26DD99002519C0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6E33F97A2A26D886002519C0 /* Shelf */;
+			target = 6E33F97A2A26D886002519C0 /* Shelv */;
 			targetProxy = 6E33F9982A26DD99002519C0 /* PBXContainerItemProxy */;
 		};
 		6E33F9A82A26DDA0002519C0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6E33F97A2A26D886002519C0 /* Shelf */;
+			target = 6E33F97A2A26D886002519C0 /* Shelv */;
 			targetProxy = 6E33F9A72A26DDA0002519C0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -638,14 +638,14 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "config/Shelf-info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Shelf;
+				INFOPLIST_KEY_CFBundleDisplayName = Shelv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.shelf;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.shelv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -666,14 +666,14 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "config/Shelf-info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Shelf;
+				INFOPLIST_KEY_CFBundleDisplayName = Shelv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.shelf;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.shelv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -686,9 +686,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UUEFBYP76;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelfTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelvTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -703,9 +704,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UUEFBYP76;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelfTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelvTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -719,9 +721,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UUEFBYP76;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelfUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelvUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -735,9 +738,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UUEFBYP76;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelfUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelvUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -822,14 +826,14 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "config/Shelf-info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Shelf;
+				INFOPLIST_KEY_CFBundleDisplayName = Shelv;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.shelf;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.shelv;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -842,9 +846,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UUEFBYP76;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelfTests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelvTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -858,9 +863,10 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UUEFBYP76;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelfUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.leolem.ShelvUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
@@ -882,7 +888,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E33F9892A26D887002519C0 /* Build configuration list for PBXNativeTarget "Shelf" */ = {
+		6E33F9892A26D887002519C0 /* Build configuration list for PBXNativeTarget "Shelv" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E33F98A2A26D887002519C0 /* Debug */,
@@ -892,7 +898,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E33F99A2A26DD99002519C0 /* Build configuration list for PBXNativeTarget "ShelfTests" */ = {
+		6E33F99A2A26DD99002519C0 /* Build configuration list for PBXNativeTarget "ShelvTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E33F99B2A26DD99002519C0 /* Debug */,
@@ -902,7 +908,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6E33F9A92A26DDA0002519C0 /* Build configuration list for PBXNativeTarget "ShelfUITests" */ = {
+		6E33F9A92A26DDA0002519C0 /* Build configuration list for PBXNativeTarget "ShelvUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E33F9AA2A26DDA0002519C0 /* Debug */,

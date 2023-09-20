@@ -36,7 +36,6 @@ extension AppReducer {
 }
 
 // MARK: - (ENVIRONMENT)
-// TODO: turn this into macro
 
 import protocol SwiftUI.EnvironmentKey
 import struct SwiftUI.EnvironmentValues

@@ -1,6 +1,6 @@
 // Created by Leopold Lemmermann on 13.09.23.
 
-@testable import Shelf
+@testable import Shelv
 import ComposableArchitecture
 import SwiftData
 import XCTest

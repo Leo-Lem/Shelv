@@ -1,13 +1,13 @@
 // Created by Leopold Lemmermann on 01.09.2023.
 
 import ComposableArchitecture
-@testable import Shelf
+@testable import Shelv
 import SwiftData
 import XCTest
 
 @MainActor
 final class CurrentTests: XCTestCase {
-  var context: ModelContext! // TODO: macro?
+  var context: ModelContext!
 
   override func setUp() async throws {
     let container = try ModelContainer(

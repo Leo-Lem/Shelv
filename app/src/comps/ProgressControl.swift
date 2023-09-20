@@ -2,8 +2,6 @@
 
 import SwiftUI
 
-// TODO: add a page number
-
 struct ProgressControl: View {
   @Binding var page: Int
   let total: Int
@@ -24,7 +22,7 @@ struct ProgressControl: View {
       ) {} minimumValueLabel: {
         Text(page.formatted())
       } maximumValueLabel: {
-        Text((page - (1 + total)).formatted())
+        Text((page - (total)).formatted())
       }
       .font(.headline)
       .foregroundStyle(.secondary)
